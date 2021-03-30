@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.all
+    @item = Item.new(item_params)
+    @item.user_id = current_user.id
   end
 
   # GET /items/1
